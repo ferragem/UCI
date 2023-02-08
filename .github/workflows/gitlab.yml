@@ -1,5 +1,8 @@
+name: Syncing with gitlab
+
 on: push
 
+jobs:
 sync-with-github:
   before_script:
     - git config --global user.name "${GITLAB_USER_NAME}"
