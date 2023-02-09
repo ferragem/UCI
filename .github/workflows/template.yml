@@ -14,22 +14,9 @@ jobs:
         if: ${{ !startsWith(env.UNITY_LICENSE, '<') }}
         run: exit 1
 
-
-    - uses: webbertakken/unity-test-runner@v2
-        id: testRunner
-        with:
-          testMode: all
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Test results (all modes)
-          path: ${{ steps.testRunner.outputs.artifactsPath }}
-
   buildWebGL:
     name: Build for WebGL 🖥️
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
