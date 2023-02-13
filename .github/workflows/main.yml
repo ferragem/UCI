@@ -52,8 +52,8 @@ jobs:
       # Output
       - uses: actions/upload-artifact@v2
         with:
-          name: Build
-          path: build
+          name: build-WebGL
+          path: build/WebGL
           
  deployPages:
    needs: buildWebGL
@@ -63,10 +63,10 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v2
     
-  # - uses: actions/download-artifact@v2
-   #  with:
-   #   name: buildWebGL
-   #   path: build
+   - uses: actions/download-artifact@v2
+     with:
+      name: build-WebGL
+      path: build
     
    - name: Display structure of root files
      run: ls -R
