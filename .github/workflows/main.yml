@@ -73,7 +73,6 @@ jobs:
      with:
       name: build-WebGL
       path: build/WebGL
-      token: ${{ACCESS_TOKEN}}
     
    - name: Display structure of root files
      run: ls -R
