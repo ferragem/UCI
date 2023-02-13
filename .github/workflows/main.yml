@@ -10,6 +10,7 @@ jobs:
       # Checkout (without LFS)
       - name: Checkout repository
         uses: actions/checkout@v2
+        
 
       # Git LFS
       - name: Create LFS file list
@@ -66,7 +67,7 @@ jobs:
    - uses: actions/download-artifact@v2
      with:
       name: build-WebGL
-      path: build
+      path: build/WebGL
     
    - name: Display structure of root files
      run: ls -R
