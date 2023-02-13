@@ -63,10 +63,10 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v2
     
-   - uses: actions/download-artifact@v2
-     with:
-      name: buildWebGL
-      path: build
+  # - uses: actions/download-artifact@v2
+   #  with:
+   #   name: buildWebGL
+   #   path: build
     
    - name: Display structure of root files
      run: ls -R
