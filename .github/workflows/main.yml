@@ -3,7 +3,7 @@ name: Actions 😎
 on: [push, pull_request]
 
 jobs:
-  build:
+  buildWebGL:
     name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
@@ -55,6 +55,7 @@ jobs:
           name: Build
           path: build
   deployPages:
+    needs: buildWebGL
     name: Deploy to Github Pages 🚀
     runs-on: ubuntu-latest
     steps:
