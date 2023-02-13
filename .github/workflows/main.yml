@@ -22,7 +22,8 @@ jobs:
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
+          token: ${{ACCESS_TOKEN}}
+          
       - name: Git LFS Pull
         run: |
           git lfs pull
@@ -61,9 +62,11 @@ jobs:
    needs: buildWebGL
    name: Deploy to Github Pages 🚀
    runs-on: ubuntu-latest
+  
    steps:
    - name: Checkout code
      uses: actions/checkout@v2
+    
     
    - uses: actions/download-artifact@v2
      with:
@@ -79,3 +82,4 @@ jobs:
      with:
       branch: gh-pages
       folder: build/WebGL
+
