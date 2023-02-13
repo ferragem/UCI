@@ -54,6 +54,7 @@ jobs:
         with:
           name: Build
           path: build
+          
   deployPages:
     needs: buildWebGL
     name: Deploy to Github Pages 🚀
