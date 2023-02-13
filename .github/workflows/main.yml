@@ -22,7 +22,7 @@ jobs:
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-          token: ${{ACCESS_TOKEN}}
+          
           
       - name: Git LFS Pull
         run: |
@@ -66,12 +66,14 @@ jobs:
    steps:
    - name: Checkout code
      uses: actions/checkout@v2
+
     
     
    - uses: actions/download-artifact@v2
      with:
       name: build-WebGL
       path: build/WebGL
+      token: ${{ACCESS_TOKEN}}
     
    - name: Display structure of root files
      run: ls -R
